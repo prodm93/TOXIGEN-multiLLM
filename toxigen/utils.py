@@ -1,7 +1,7 @@
 from toxigen.language_models import GPT3, GPT4, ALICE
 import pandas as pd
 
-def alice(prompt, base_model, classifier, api_key, endpoint_url=None, mode="neutral", num_to_generate=1, device="cpu"):
+def alice(prompt, base_model, model_name, classifier, api_key, endpoint_url=None, mode="neutral", num_to_generate=1, device="cpu"):
     if base_model=='GPT3':
         language_model = ALICE(GPT3(endpoint_url=endpoint_url, apikey=api_key), classifier, mode, device="cpu")
     elif base_model=='GPT4':
