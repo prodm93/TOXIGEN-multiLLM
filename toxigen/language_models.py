@@ -37,10 +37,9 @@ class GPT3(object):
         return output["choices"][0]["text"]
 
 class GPT4(object):
-    def __init__(self, model_name, endpoint_url, apikey):
+    def __init__(self, model_name, apikey):
         self.model = model_name
         self.apikey = apikey
-        self.endpoint_url = endpoint_url
 
     #def __call__(self, prompt, top_p=1, max_tokens=1):
     def __call__(self, prompt, topk=1, max_tokens=1):
