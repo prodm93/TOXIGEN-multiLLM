@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: toxigen
+Name: toxigen_multillm
 Version: 0.1.0
 Summary: Code support for ToxiGen
 Home-page: https://github.com/microsoft/toxigen
