@@ -3,3 +3,4 @@ requests==2.27.1
 numpy==1.22.0
 torch==1.10.2
 transformers==4.12.3
+openai==1.54.3
