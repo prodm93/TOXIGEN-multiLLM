@@ -73,6 +73,7 @@ class BeamHypotheses(object):
             return ret
 
 def beam_search(prompt,
+                model_name,
                 language_model,
                 classifier,
                 mode, # if 1, Toxic, if 0 Neutral
@@ -108,7 +109,7 @@ def beam_search(prompt,
     outputs = {}
     while 'choices' not in outputs.keys():
         try:
-            outputs = language_model(prompt, topk=num_beams)
+            outputs = language_model(model_name, prompt, topk=num_beams)
             print(f"GPT-3 response: {outputs}")
             if len(outputs['choices'][0]['logprobs']['top_logprobs']) == 0:
                 continue
@@ -125,7 +126,7 @@ def beam_search(prompt,
         outputs = {}
         while 'choices' not in outputs.keys():
             try: 
-                outputs = language_model(input_ids, topk=vocab_size)
+                outputs = language_model(model_name, input_ids, topk=vocab_size)
                 print(f"GPT-3 response: {outputs}")
             except:
                 pass
