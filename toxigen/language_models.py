@@ -79,8 +79,9 @@ class Gemini(object):
     pass
 
 class ALICE(object):
-    def __init__(self, language_model, classifier, mode, device="cpu"):
+    def __init__(self, model_name, language_model, classifier, mode, device="cpu"):
         self.classifier = classifier
+        self.model_name = model_name
         self.language_model = language_model
         self.device = device
         self.mode = mode
@@ -93,4 +94,4 @@ class ALICE(object):
             flag = 0
         else:
             flag = 1
-        return beam_search(prompt, self.language_model, self.classifier, flag, self.device)
+        return beam_search(prompt, self.model_name, self.language_model, self.classifier, flag, self.device)
