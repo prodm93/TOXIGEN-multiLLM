@@ -5,7 +5,7 @@ def alice(prompt, base_model, model_name, classifier, api_key, endpoint_url=None
     if base_model=='GPT3':
         language_model = ALICE(GPT3(endpoint_url=endpoint_url, apikey=api_key), classifier, mode, device="cpu")
     elif base_model=='GPT4':
-        language_model = ALICE(GPT4(model_name, api_key))
+        language_model = ALICE(GPT4(model_name, api_key), classifier, mode, device="cpu")
     elif base_model=='Gemini':
         pass
     elif base_model=='LLaMA3':
