@@ -2,6 +2,7 @@ import requests
 import json
 from toxigen.alice import beam_search
 import os
+import openai
 import google.generativeai as genai
 
 class GPT3(object):
