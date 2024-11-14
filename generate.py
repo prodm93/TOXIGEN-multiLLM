@@ -7,9 +7,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_prompt_file", type=str)
     parser.add_argument("--language_model", type=str)
+    parser.add_argument("--model_name", type=str)
     parser.add_argument("--output_file", type=str)
     parser.add_argument("--num_generations_per_prompt", type=int)
-    parser.add_argument("--endpoint_url", type=str)
+    parser.add_argument("--endpoint_url", type=str, default=None)
     parser.add_argument("--api_key", type=str)
     parser.add_argument("--classifier", type=str)
     parser.add_argument("--generation_mode", type=str) # Can either be "neutral" or "hate", and indicates what you want to generate
@@ -23,8 +24,12 @@ def main():
     # --- initialize language model ---
     if args.language_model == "GPT3":
         language_model = GPT3(endpoint_url=args.endpoint_url, apikey=args.api_key)
-    elif args.language_model == "GPT2":
-        language_model = GPT2()
+    elif args.language_model == "GPT4":
+        language_model = GPT4(model_name=args.model_name, apikey=args.api_key)
+    elif args.language_model == 'Gemini':
+        pass
+    elif args.language_model == 'LLaMA3':
+        pass
     else:
         raise ValueError
 
