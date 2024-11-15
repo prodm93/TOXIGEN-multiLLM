@@ -1,5 +1,5 @@
 import torch
-from toxigen.language_models import GPT3, ALICE
+from toxigen.language_models import GPT3, GPT4, ALICE
 from toxigen.pretrained_classifiers import HateBERT, ToxDectRoBERTa
 import argparse
 
