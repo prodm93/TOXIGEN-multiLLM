@@ -43,7 +43,7 @@ def main():
             raise NotImplementedError
 
         # --- wrap language model and toxicity detector in ALICE ---
-        language_model = ALICE(language_model, classifier, args.generation_mode)
+        language_model = ALICE(self.model_name, language_model, classifier, args.generation_mode)
 
     # --- loop through prompts and generate responses ---
     for prompt in prompts:
