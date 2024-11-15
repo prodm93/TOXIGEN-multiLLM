@@ -1,4 +1,5 @@
 import torch
+import nltk
 from toxigen.language_models import GPT3, GPT4, ALICE
 from toxigen.pretrained_classifiers import HateBERT, ToxDectRoBERTa
 import argparse
@@ -18,6 +19,9 @@ def main():
 
     args = parser.parse_args()
 
+    # --- download nltk stopwords in case not downloaded already ---
+    nltk.download('stopwords')
+    
     # --- load prompts ---
     prompts = [l.strip() for l in open(args.input_prompt_file).readlines()]
 
